@@ -1,0 +1,43 @@
+{
+	"name": "portfolio-3",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"lint": "eslint .",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@emailjs/browser": "^4.4.1",
+		"@react-three/drei": "^9.114.3",
+		"@react-three/fiber": "^8.17.10",
+		"cobe": "^0.6.4",
+		"framer-motion": "^11.11.8",
+		"maath": "^0.10.8",
+		"motion": "^12.23.12",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-router-dom": "^6.27.0",
+		"react-vertical-timeline-component": "^3.6.0",
+		"tailwind-merge": "^2.6.0",
+		"three": "^0.160.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.19.0",
+		"@types/react": "^18.2.79",
+		"@types/react-dom": "^18.2.25",
+		"@vitejs/plugin-react": "^4.3.4",
+		"autoprefixer": "^10.4.20",
+		"eslint": "^9.19.0",
+		"eslint-plugin-react": "^7.37.4",
+		"eslint-plugin-react-hooks": "^5.0.0",
+		"eslint-plugin-react-refresh": "^0.4.18",
+		"globals": "^15.14.0",
+		"postcss": "^8.4.47",
+		"tailwindcss": "^3.4.1",
+		"terser": "^5.43.1",
+		"vite": "^5.4.8"
+	}
+}
