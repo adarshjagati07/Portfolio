@@ -25,7 +25,7 @@ const About = () => {
 					/>
 					<div className="z-10">
 						<p className="headtext">Hi, I&apos;m Adarsh Narayan Jagati</p>
-						<p className="subtext">Over the last few years, I developed my frontend and backend dev skills to deliver dynamic and software and web applications.</p>
+						<p className="subtext">Fueled by passion and practice, I’ve spent years shaping my frontend and backend skills into powerful, dynamic digital solutions..</p>
 						<div className="mt-4">
 							<a
 								href="https://drive.google.com/file/d/1oFDwDZBb3CGhxKm74OhQM433zq5LJzw6/view?usp=sharing"
