@@ -436,12 +436,12 @@ export const mySocials = [
 	{
 		name: "GitHub",
 		href: "https://github.com/adarshjagati07",
-		icon: "/assets/socials/github.svg"
+		icon: "/assets/socials/github.png"
 	},
 	{
-		name: "Email",
-		href: "mailto:mail.adarshjagati@gmail.com",
-		icon: "/assets/socials/gmail.svg"
+		name: "Instagram",
+		href: "https://www.instagram.com/adarsh.dev/",
+		icon: "/assets/socials/instagram.svg"
 	},
 	{
 		name: "WhatsApp",

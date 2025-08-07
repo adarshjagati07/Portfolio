@@ -14,6 +14,11 @@ const Contact = () => {
 	const [alertType, setAlertType] = useState("success");
 	const [alertMessage, setAlertMessage] = useState("");
 
+	// EmailJS Configuration from environment variables
+	const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+	const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+	const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
@@ -31,19 +36,48 @@ const Contact = () => {
 		e.preventDefault();
 		setIsLoading(true);
 
+		// Check if EmailJS credentials are configured
+		if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+			setIsLoading(false);
+			showAlertMessage("danger", "Email service not configured. Please contact the administrator.");
+			console.error("EmailJS credentials missing:", { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY });
+			return;
+		}
+
 		try {
-			console.log("Form submitted:", formData);
-			// EmailJS implementation would go here
-			// For now, just simulate success
-			setTimeout(() => {
-				setIsLoading(false);
-				setFormData({ name: "", email: "", message: "" });
-				showAlertMessage("success", "Your message has been sent!");
-			}, 1000);
+			// Get current time in a readable format
+			const currentTime = new Date().toLocaleString("en-US", {
+				year: "numeric",
+				month: "long",
+				day: "numeric",
+				hour: "2-digit",
+				minute: "2-digit",
+				second: "2-digit",
+				timeZoneName: "short"
+			});
+
+			// EmailJS template parameters
+			const templateParams = {
+				user_name: formData.name,
+				user_email: formData.email,
+				user_message: formData.message,
+				to_email: "mail.adarshjagati@gmail.com",
+				time: currentTime
+			};
+
+			console.log("Sending email with params:", templateParams);
+
+			// Send email using EmailJS
+			const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+			console.log("Email sent successfully:", response);
+			setIsLoading(false);
+			setFormData({ name: "", email: "", message: "" });
+			showAlertMessage("success", "Your message has been sent successfully!");
 		} catch (error) {
 			setIsLoading(false);
-			console.log(error);
-			showAlertMessage("danger", "Something went wrong!");
+			console.error("Email send failed:", error);
+			showAlertMessage("danger", "Failed to send message. Please try again.");
 		}
 	};
 
