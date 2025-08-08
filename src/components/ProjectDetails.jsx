@@ -33,11 +33,11 @@ const ProjectDetails = ({ title, description, subDescription, image, tags, href,
 
 	return (
 		<div
-			className="fixed inset-0 z-[9999] flex items-start justify-center w-full h-full overflow-hidden backdrop-blur-sm bg-black/50 pt-20"
+			className="fixed inset-0 z-[9999] flex items-start justify-center w-full h-full overflow-hidden backdrop-blur-sm bg-black/50 pt-10 sm:pt-20"
 			onClick={handleBackdropClick}
 		>
 			<motion.div
-				className="relative max-w-4xl mx-4 max-h-[85vh] overflow-y-auto border shadow-2xl rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
+				className="relative max-w-4xl mx-2 sm:mx-4 max-h-[90vh] sm:max-h-[85vh] overflow-y-auto border shadow-2xl rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
 				initial={{ opacity: 0, scale: 0.5, y: 50 }}
 				animate={{ opacity: 1, scale: 1, y: 0 }}
 				exit={{ opacity: 0, scale: 0.5, y: 50 }}
@@ -45,7 +45,7 @@ const ProjectDetails = ({ title, description, subDescription, image, tags, href,
 			>
 				<button
 					onClick={closeModal}
-					className="absolute p-2 rounded-full top-4 right-4 bg-midnight/80 hover:bg-gray-600 transition-colors duration-200 z-10"
+					className="absolute p-2 rounded-full top-2 sm:top-4 right-2 sm:right-4 bg-midnight/80 hover:bg-gray-600 transition-colors duration-200 z-10"
 					aria-label="Close modal"
 				>
 					<svg
@@ -66,31 +66,31 @@ const ProjectDetails = ({ title, description, subDescription, image, tags, href,
 					<img
 						src={image}
 						alt={title}
-						className="w-full h-auto max-h-96 object-contain"
+						className="w-full h-auto max-h-48 sm:max-h-96 object-contain"
 						onError={(e) => {
 							e.target.style.display = "none";
 						}}
 					/>
 				</div>
-				<div className="p-6">
-					<h5 className="mb-3 text-2xl font-bold text-white">{title}</h5>
-					<p className="mb-4 font-normal text-neutral-400 leading-relaxed">{description}</p>
+				<div className="p-4 sm:p-6">
+					<h5 className="mb-3 text-lg sm:text-xl md:text-2xl font-bold text-white">{title}</h5>
+					<p className="mb-4 font-normal text-neutral-400 leading-relaxed text-sm sm:text-base">{description}</p>
 					{subDescription &&
 						subDescription.map((subDesc, index) => (
 							<p
 								key={index}
-								className="mb-3 font-normal text-neutral-400 leading-relaxed"
+								className="mb-3 font-normal text-neutral-400 leading-relaxed text-sm sm:text-base"
 							>
 								{subDesc}
 							</p>
 						))}
-					<div className="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
-						<div className="flex gap-3">
+					<div className="flex flex-col sm:flex-row sm:items-center justify-between mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-white/10 gap-3 sm:gap-0">
+						<div className="flex gap-2 sm:gap-3">
 							{tags &&
 								tags.map((tag) => (
 									<div
 										key={tag.id}
-										className="flex items-center justify-center w-10 h-10 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-200"
+										className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-200"
 									>
 										<span className="text-xs font-bold text-white">{tag.name.charAt(0)}</span>
 									</div>
@@ -101,11 +101,11 @@ const ProjectDetails = ({ title, description, subDescription, image, tags, href,
 								href={href}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#915eff] to-[#7a57db] text-white rounded-lg hover:from-[#7a57db] hover:to-[#915eff] transition-all duration-300 transform hover:scale-105"
+								className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-[#915eff] to-[#7a57db] text-white rounded-lg hover:from-[#7a57db] hover:to-[#915eff] transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
 							>
 								View Project
 								<svg
-									className="w-4 h-4"
+									className="w-3 h-3 sm:w-4 sm:h-4"
 									fill="none"
 									stroke="currentColor"
 									viewBox="0 0 24 24"

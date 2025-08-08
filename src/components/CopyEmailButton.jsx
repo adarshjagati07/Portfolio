@@ -19,12 +19,12 @@ const CopyEmailButton = () => {
 			onClick={copyToClipboard}
 			whileHover={{ y: -5 }}
 			whileTap={{ scale: 1.05 }}
-			className="relative px-1 py-4 text-sm text-center rounded-full font-extralight bg-primary w-[12rem] cursor-pointer overflow-hidden"
+			className="relative px-1 py-3 sm:py-4 text-xs sm:text-sm text-center rounded-full font-extralight bg-primary w-[10rem] sm:w-[12rem] cursor-pointer overflow-hidden"
 		>
 			<AnimatePresence mode="wait">
 				{copied ? (
 					<motion.p
-						className="flex items-center justify-center gap-2"
+						className="flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
 						key="copied"
 						initial={{ opacity: 0, y: -10 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const CopyEmailButton = () => {
 					</motion.p>
 				) : (
 					<motion.p
-						className="flex items-center justify-center gap-2"
+						className="flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"
 						key="copy"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}

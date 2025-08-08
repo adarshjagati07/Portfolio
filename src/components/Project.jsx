@@ -8,17 +8,27 @@ const Project = ({ title, description, subDescription, href, image, tags, setPre
 	return (
 		<>
 			<div
-				className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
+				className="flex-wrap items-center justify-between py-6 sm:py-10 space-y-8 sm:space-y-14 sm:flex sm:space-y-0"
 				onMouseEnter={() => setPreview && setPreview(image)}
 				onMouseLeave={() => setPreview && setPreview(null)}
 			>
 				<div>
-					<p className="text-2xl">{title}</p>
-					<div className="flex gap-5 mt-2 text-sand">{tags && tags.map((tag) => <span key={tag.id}>{tag.name}</span>)}</div>
+					<p className="text-lg sm:text-xl md:text-2xl">{title}</p>
+					<div className="flex flex-wrap gap-3 sm:gap-5 mt-2 text-sand">
+						{tags &&
+							tags.map((tag) => (
+								<span
+									key={tag.id}
+									className="text-xs sm:text-sm"
+								>
+									{tag.name}
+								</span>
+							))}
+					</div>
 				</div>
 				<button
 					onClick={() => setIsModalOpen(true)}
-					className="flex items-center gap-1 cursor-pointer hover-animation"
+					className="flex items-center gap-1 cursor-pointer hover-animation text-sm sm:text-base"
 				>
 					Read More →
 				</button>

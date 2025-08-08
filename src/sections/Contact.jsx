@@ -84,7 +84,7 @@ const Contact = () => {
 	return (
 		<section
 			id="contact"
-			className="relative flex items-center c-space py-20"
+			className="relative flex items-center c-space py-10 sm:py-16"
 		>
 			<Particles
 				className="absolute inset-0 -z-50"
@@ -99,16 +99,18 @@ const Contact = () => {
 					text={alertMessage}
 				/>
 			)}
-			<div className="flex flex-col items-center justify-center max-w-lg p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
-				<div className="flex flex-col items-start w-full gap-5 mb-10">
-					<h2 className="text-heading">Let's Talk</h2>
-					<p className="font-normal text-neutral-400">Whether you're looking to build a new website, improve your existing platform, or bring a unique project to life, I'm here to help</p>
+			<div className="flex flex-col items-center justify-center max-w-lg p-4 sm:p-5 mx-auto border border-white/10 rounded-2xl bg-primary/20 sm:bg-primary backdrop-blur-sm">
+				<div className="flex flex-col items-start w-full gap-4 sm:gap-5 mb-8 sm:mb-10">
+					<h2 className="text-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl">Let&apos;s Talk</h2>
+					<p className="font-normal text-neutral-400 text-xs sm:text-sm md:text-base">
+						Whether you&apos;re looking to build a new website, improve your existing platform, or bring a unique project to life, I&apos;m here to help
+					</p>
 				</div>
 				<form
 					className="w-full"
 					onSubmit={handleSubmit}
 				>
-					<div className="mb-5">
+					<div className="mb-4 sm:mb-5">
 						<label
 							htmlFor="name"
 							className="field-label"
@@ -127,7 +129,7 @@ const Contact = () => {
 							required
 						/>
 					</div>
-					<div className="mb-5">
+					<div className="mb-4 sm:mb-5">
 						<label
 							htmlFor="email"
 							className="field-label"
@@ -146,7 +148,7 @@ const Contact = () => {
 							required
 						/>
 					</div>
-					<div className="mb-5">
+					<div className="mb-4 sm:mb-5">
 						<label
 							htmlFor="message"
 							className="field-label"
@@ -168,7 +170,7 @@ const Contact = () => {
 					</div>
 					<button
 						type="submit"
-						className="w-full px-1 py-3 text-lg text-center rounded-md cursor-pointer bg-gradient-to-r from-purple-500 to-blue-500 hover:scale-105 transition-transform"
+						className="w-full px-1 py-3 text-base sm:text-lg text-center rounded-md cursor-pointer bg-gradient-to-r from-purple-500 to-blue-500 hover:scale-105 transition-transform"
 					>
 						{!isLoading ? "Send" : "Sending..."}
 					</button>

@@ -19,14 +19,14 @@ const Projects = () => {
 	return (
 		<section
 			onMouseMove={handleMouseMove}
-			className="relative c-space py-20"
+			className="relative c-space py-10 sm:py-20"
 			id="projects"
 		>
 			<div>
-				<p className="text-secondary text-[14px] uppercase tracking-wider text-center">My work</p>
+				<p className="text-secondary text-[12px] sm:text-[14px] uppercase tracking-wider text-center">My work</p>
 				<h2 className="text-white font-black md:text-[50px] sm:text-[40px] xs:text-[35px] text-[25px] text-center">Selected Projects</h2>
 			</div>
-			<div className="max-w-6xl mx-auto pl-4 md:pl-0">
+			<div className="max-w-6xl mx-auto pl-2 sm:pl-4 md:pl-0">
 				{myProjects.map((project) => (
 					<Project
 						key={project.id}
@@ -37,7 +37,7 @@ const Projects = () => {
 			</div>
 			{preview && (
 				<motion.img
-					className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
+					className="fixed top-0 left-0 z-50 object-cover h-40 sm:h-56 rounded-lg shadow-lg pointer-events-none w-64 sm:w-80"
 					src={preview}
 					style={{ x: springX, y: springY }}
 				/>

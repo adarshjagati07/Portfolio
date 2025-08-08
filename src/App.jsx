@@ -37,7 +37,7 @@ const App = () => {
 
 				{/* Education from Portfolio-2 */}
 				<div
-					className="relative z-0 c-space py-10"
+					className="relative z-0 c-space py-6 sm:py-10"
 					id="education"
 				>
 					<Education />
@@ -45,7 +45,7 @@ const App = () => {
 				<div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full max-w-7xl mx-auto" />
 
 				{/* Activities and Certifications */}
-				<div className="relative z-0 c-space py-20">
+				<div className="relative z-0 c-space py-10 sm:py-20">
 					<Activities />
 				</div>
 				<div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full max-w-7xl mx-auto" />
